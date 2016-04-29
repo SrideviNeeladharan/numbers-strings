@@ -9,6 +9,7 @@ $("document").ready(function(){
   
   $("#button1").click(function(event){
     event.preventDefault();
+    
     var inputVal = $("#input").val();
     
     if (isNaN(inputVal))
@@ -18,8 +19,12 @@ $("document").ready(function(){
        
         //debugger;
         
-        var words = $.trim($("#input").val()).split(/[\s*\.*\,\;\+?\#\|:\-\/\\\[\]\(\)\{\}$%&0-9*]/);
-        $("#span").html(words.length);
+        var words = $.trim($("#input").val()).toLowerCase().split(/[\s*\.*\,\;\+?\#\|:\-\/\\\[\]\(\)\{\}$%&0-9*]/);
+        //words.toLowerCase();
+        strArrayList.join(words);
+        console.log(strArrayList.length);
+        console.log(words)
+        $
         
          for(var i in  words)
          {
@@ -41,25 +46,23 @@ $("document").ready(function(){
               }
            }
         }
-        $("#tab3").data('<tr><td>' + hist + '</td><td>' + + '</td></tr>');      
+        //$("#tab3").data('<tr><td>' + hist + '</td><td>' + + '</td></tr>');      
         
         console.log(JSON.stringify(hist));
+       
+       
     
         
         $("#input").val('');
         
       
       }//closing if
-    
-        
-    
-    
     else
       {
         numArrayList.push(inputVal);
         $("#tab1").append('<tr><td>' + inputVal + '</td></tr>');
      
-      var sum =0;
+      var sum = 0;
       for (var i=0; i<numArrayList.length; i++)
       {
         sum += numArrayList[i] << 0;
@@ -75,8 +78,8 @@ $("document").ready(function(){
 
  function resetButton()
    {
-      $("textarea").val('');
-      $("#input").reset();
+      //$("textarea").val('');
+      $("form").reset();
     
 
     }
