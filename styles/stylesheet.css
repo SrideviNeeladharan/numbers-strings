@@ -1,0 +1,12 @@
+table, th, tr, td
+{
+  border: 2px solid black;
+  margin: 1em;
+  padding: 1em;
+  
+}
+textarea
+{
+ width:50%;
+min-height: 50%;
+}
